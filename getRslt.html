@@ -24,12 +24,12 @@ var code = getParameters('code');
 alert(code);
 </script>
     <body>
-     <h1>TEST-CODE3</h1>
+     <h1>TEST-CODE</h1>
         <script>
             document.write('val :' + code + '<br>');
+            document.write('<input type="text" name="code" value=' + code + '</>>');
         </script>
 <form method="post" action="https://testapi.openbanking.or.kr/oauth/2.0/token">
-  <input type="text" name="code" value="${code}"/>
   <input type="hidden" name="client_id" value="d9d2cd63-da6f-47b5-bace-81b19af9e0c4"/>
   <input type="hidden" name="client_secret" value="813a55eb-14ba-4d09-9663-0d2b83e31010"/>
   <input type="hidden" name="redirect_uri" value="https://jinwon0330.github.io/OAuth/getRslt.html"/>
