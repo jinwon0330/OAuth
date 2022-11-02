@@ -20,13 +20,17 @@ return decodeURIComponent(returnValue);
 }
 }
 };
-
-alert(getParameters('code'));
+var code = getParameters('code');
+alert(code);
 </script>
     <body>
-     <h1>TEST5</h1>
+     <h1>TEST</h1>
+        <script>
+            var val = '문자열';
+            document.write('val :' + val + '<br>');
+</script>
 <form method="post" action="https://openapi.openbanking.or.kr/oauth/2.0/token">
-  <input type="hidden" name="code" value="getParameters"/>
+  <input type="hidden" name="code" value=code/>
   <input type="hidden" name="client_id" value="d9d2cd63-da6f-47b5-bace-81b19af9e0c4"/>
   <input type="hidden" name="client_secret" value="d9d2cd63-da6f-47b5-bace-81b19af9e0c4"/>
   <input type="hidden" name="redirect_uri" value="https://jinwon0330.github.io/OAuth/getRslt.html"/>
