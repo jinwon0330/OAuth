@@ -24,13 +24,13 @@ return decodeURIComponent(returnValue);
 alert(getParameters('code'));
 </script>
     <body>
-     <h1>TEST1</h1>
-        <form method="post" action="https://openapi.openbanking.or.kr/oauth/2.0/token">
-  <input type="hidden" name="code" value=getParameters('code')/>
+     <h1>TEST5</h1>
+<form method="post" action="https://openapi.openbanking.or.kr/oauth/2.0/token">
+  <input type="hidden" name="code" value="getParameters"/>
   <input type="hidden" name="client_id" value="d9d2cd63-da6f-47b5-bace-81b19af9e0c4"/>
-            <input type="hidden" name="client_secret" value="d9d2cd63-da6f-47b5-bace-81b19af9e0c4"/>
+  <input type="hidden" name="client_secret" value="d9d2cd63-da6f-47b5-bace-81b19af9e0c4"/>
   <input type="hidden" name="redirect_uri" value="https://jinwon0330.github.io/OAuth/getRslt.html"/>
-            <input type="hidden" name="grant_type" value="authorization_code"/>
+  <input type="hidden" name="grant_type" value="authorization_code"/>
   <input type="submit" value="requestTest"/>
 </form>
     </body>
