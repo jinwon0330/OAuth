@@ -13,19 +13,8 @@
 ?>
 	<p>----------------------------------</p>
 <?
-	$parameter = $_GET["GPSLAT"];
-	$parameter2 = $_GET["GPSLONG"];
+	$parameter = $_GET["access_token"];
 	echo "(". $parameter .")<br/>";
-	echo "(". $parameter2 .")<br/>";
-
-	if (is_null($parameter)) {
-        echo '<h1>Can not Insert Data!</h1>';
-    } else {
-        $jb_connect = mysqli_connect('220.95.232.52:13306', 'kjw4563', 'kjw4563923', 'kjw4563_ts');
-        $jb_sql = "insert into GPSData(GPSLAT,GPSLONG) VALUES ( '$parameter', '$parameter2');";
-        mysqli_query($jb_connect, $jb_sql);
-        echo '<h1>Success!</h1>';
-    }
 ?>
  	<p>----------------------------------</p>
 <?
