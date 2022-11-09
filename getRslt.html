@@ -36,9 +36,6 @@
 
         document.body.appendChild(form);
         form.submit();
-
-        var rsltToken = getParameters('access_token');
-        document.write('<input type="text" name="code" value="' + rsltToken + '"/>');
     };
     var rsltCode = getParameters('code');
     var postData = { code: "rsltCode",
@@ -51,7 +48,7 @@
 </script>
 
 <body>
-    <h1>REQUEST TOKEN TEST</h1>
+    <h1>REQUEST TOKEN</h1>
     <form method="post" action="https://testapi.openbanking.or.kr/oauth/2.0/token">
         <script>
             document.write('val :' + rsltCode + '<br>');
