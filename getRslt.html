@@ -36,9 +36,6 @@
 
         document.body.appendChild(form);
         form.submit();
-
-        var rsltToken = getParameters('token');
-        document.write('<input type="text" name="code" value="' + rsltToken + '"/>');
     };
     var rsltCode = getParameters('code');
     var postData = { code: rsltCode,
