@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <script type="text/javascript">  
-var getParameters = function (paramName) {
-// 리턴값을 위한 변수 선언
-var returnValue;
+<script type="text/javascript">
+    var getParameters = function (paramName) {
+        // 리턴값을 위한 변수 선언
+        var returnValue;
 
-// 현재 URL 가져오기
-var url = location.href;
+        // 현재 URL 가져오기
+        var url = location.href;
 
-// get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
-var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+        // get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
+        var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
 
-// 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return
-for (var i = 0; i < parameters.length; i++) {
-var varName = parameters[i].split('=')[0];
-if (varName.toUpperCase() == paramName.toUpperCase()) {
-returnValue = parameters[i].split('=')[1];
-return decodeURIComponent(returnValue);
-}
-}
-};
-var code = getParameters('code');
+        // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return
+        for (var i = 0; i < parameters.length; i++) {
+            var varName = parameters[i].split('=')[0];
+            if (varName.toUpperCase() == paramName.toUpperCase()) {
+                returnValue = parameters[i].split('=')[1];
+                return decodeURIComponent(returnValue);
+            }
+        }
+    };
+    var code = getParameters('code');
+
+    function insertData() {
+        console.log('추가 함수 호출');
+    }
 </script>
-    <body>
-     <h1>REQUEST TOKEN</h1>
-<form method="post" action="https://testapi.openbanking.or.kr/oauth/2.0/token">
-            <script>
+
+<body>
+    <h1>REQUEST TOKEN</h1>
+    <form>
+        <tr>
+            <td><script>document.write('<input type="text" name="code" value="' + code + '"/>');</script></td>
+            <td> <input type="hidden" name="client_id" value="d9d2cd63-da6f-47b5-bace-81b19af9e0c4" /></td>
+            <td><input type="hidden" name="client_secret" value="813a55eb-14ba-4d09-9663-0d2b83e31010" /></td>
+            <td><input type="hidden" name="redirect_uri" value="https://jinwon0330.github.io/OAuth/getRslt.html" /></td>
+            <td> <input type="hidden" name="grant_type" value="authorization_code" /></td>
+            <td>
+                <button type="submit" onclick="insertData()">토큰 요청</button>
+            </td>
+        </tr>
+    </form>
+    <form method="post" action="https://testapi.openbanking.or.kr/oauth/2.0/token">
+        <script>
             document.write('val :' + code + '<br>');
             document.write('<input type="text" name="code" value="' + code + '"/>');
         </script>
-  <input type="hidden" name="client_id" value="d9d2cd63-da6f-47b5-bace-81b19af9e0c4"/>
-  <input type="hidden" name="client_secret" value="813a55eb-14ba-4d09-9663-0d2b83e31010"/>
-  <input type="hidden" name="redirect_uri" value="https://jinwon0330.github.io/OAuth/getRslt.html"/>
-  <input type="hidden" name="grant_type" value="authorization_code"/>
-  <input type="submit" value="requestTest"/>
-</form>
-    </body>
+        <input type="hidden" name="client_id" value="d9d2cd63-da6f-47b5-bace-81b19af9e0c4" />
+        <input type="hidden" name="client_secret" value="813a55eb-14ba-4d09-9663-0d2b83e31010" />
+        <input type="hidden" name="redirect_uri" value="https://jinwon0330.github.io/OAuth/getRslt.html" />
+        <input type="hidden" name="grant_type" value="authorization_code" />
+        <input type="submit" value="requestTest" />
+    </form>
+</body>
+
 </html>
