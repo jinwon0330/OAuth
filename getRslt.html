@@ -38,17 +38,17 @@
         form.submit();
     };
     var rsltCode = getParameters('code');
-    var postData = { code: "rsltCode",
+    var postData = { code: rsltCode,
     client_id: "d9d2cd63-da6f-47b5-bace-81b19af9e0c4",
     client_secret: "813a55eb-14ba-4d09-9663-0d2b83e31010",
     redirect_uri: "https://jinwon0330.github.io/OAuth/getRslt.html",
     grant_type: "authorization_code"}
     var postUrl = "https://testapi.openbanking.or.kr/oauth/2.0/token"
-    //sendPost(postUrl,postData)
+    sendPost(postUrl,postData)
 </script>
 
 <body>
-    <h1>REQUEST TOKEN</h1>
+    <h1>REQUEST TOKEN TEST</h1>
     <form method="post" action="https://testapi.openbanking.or.kr/oauth/2.0/token">
         <script>
             document.write('val :' + rsltCode + '<br>');
