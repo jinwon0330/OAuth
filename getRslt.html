@@ -49,18 +49,6 @@
 
 <body>
     <h1>REQUEST TOKEN TEST</h1>
-    <form method="post" action="https://testapi.openbanking.or.kr/oauth/2.0/token">
-        <script>
-            document.write('val :' + rsltCode + '<br>');
-            document.write('<input type="text" name="code" value="' + rsltCode + '"/>');
-        </script>
-        <input type="hidden" name="client_id" value="d9d2cd63-da6f-47b5-bace-81b19af9e0c4" />
-        <input type="hidden" name="client_secret" value="813a55eb-14ba-4d09-9663-0d2b83e31010" />
-        <input type="hidden" name="redirect_uri" value="https://jinwon0330.github.io/OAuth/getRslt.html" />
-        <input type="hidden" name="grant_type" value="authorization_code" />
-        <input type="submit" value="requestTest" />
-    </form>
-
     <button type="submit" onclick="sendPost(postUrl,postData)" >사용자 추가</button>	
 </body>
 
